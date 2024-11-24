@@ -24,8 +24,8 @@ dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
 
-    implementation(platform("software.amazon.awssdk:bom:2.29.20"))
-    implementation("software.amazon.awssdk:lambda")
+    // https://docs.aws.amazon.com/lambda/latest/dg/lambda-java.html
+    implementation("com.amazonaws:aws-lambda-java-core:1.2.3")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
