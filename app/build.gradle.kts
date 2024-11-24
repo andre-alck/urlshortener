@@ -25,7 +25,12 @@ dependencies {
     implementation(libs.guava)
 
     // https://docs.aws.amazon.com/lambda/latest/dg/lambda-java.html
+    
     implementation("com.amazonaws:aws-lambda-java-core:1.2.3")
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.1")
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
