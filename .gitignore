@@ -7,3 +7,4 @@ build
 
 # IDE Configurations
 .vscode
+.idea
