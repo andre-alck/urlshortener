@@ -63,7 +63,7 @@ abstract class BuildLambdaDeploymentZIP : DefaultTask() {
     private val lib = File("lib/")
     private val jarFolderInsideZipFile = "app/lib/"
     private val zipFileGeneratedOnBuildTask = "app/build/distributions/app.zip"
-    private val finalZip = File("lib.zip")
+    private val finalZip = File("app.zip")
 
     @TaskAction
     fun action() {
@@ -112,7 +112,7 @@ abstract class BuildLambdaDeploymentZIP : DefaultTask() {
             this.lib.listFiles()
                 ?.forEach { file ->
                     val zipFileName = file.absolutePath.removePrefix(this.lib.absolutePath)
-                    zos.putNextEntry(ZipEntry(zipFileName))
+                    zos.putNextEntry(ZipEntry("lib/" + zipFileName))
                     file.inputStream().use { fis -> fis.copyTo(zos) }
                     zos.closeEntry()
                 }
